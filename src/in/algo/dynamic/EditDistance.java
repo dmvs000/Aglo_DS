@@ -2,11 +2,15 @@ package in.algo.dynamic;
 
 public class EditDistance {
 	
+	//Given two Strings, find how many ops are required to convert from
+	//one string to the other. Permitted ops are insertion, deletion or replacement.
+	
 	//Naive Recursive Solution
 	public static int editDistanceRecur(String str1, String str2, int index1, int index2)
 	{
 		if(index1<0||index2<0)
 			return 0;
+		//If the chars Are Same
 		if(str1.charAt(index1)==str2.charAt(index2))
 			return editDistanceRecur(str1,str2,index1-1,index2-1);
 		else
