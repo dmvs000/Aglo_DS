@@ -75,7 +75,7 @@ public class NDigitNumberWithTheirSumS {
 	public static void main(String[] args)
 	{
 		//Number of digits and SUM
-		System.out.println(ND_Recur(2,2));
+		System.out.println(ND_Recur(2,5));
 		System.out.println(ND_DP(2,5));
 	}
 	
