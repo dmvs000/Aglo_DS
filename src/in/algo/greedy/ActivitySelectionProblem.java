@@ -5,6 +5,8 @@ import java.util.Collections;
 
 public class ActivitySelectionProblem {
 	
+	//Job. It has start and finish times
+	//Implements Comparable so that the Jobs can sorted based on finish times.
 	static class Job implements Comparable<Job>
 	{
 		int start;
@@ -27,9 +29,14 @@ public class ActivitySelectionProblem {
 	
 	public static int findMaxActivities(ArrayList<Job> al)
 	{
+		//Sort the Job based on comparator -> sort by finish time.
 		Collections.sort(al);
+		//Always pick the first one.
 		int count = 1;
+		//At least one is the answer.
 		int cur = 1;
+		//Prev finish holds the prev finsih time of the job. 
+		//Check this finish time with the next job's start time and if the start time is more or equal, then that job can be picked.
 		int prev_finish = al.get(0).finish;
 		System.out.print("0\t");
 		while(cur<al.size())
@@ -53,6 +60,7 @@ public class ActivitySelectionProblem {
 		int[] start  =  {10, 12, 20};
 	    int[] finish =  {20, 25, 30};
 		ArrayList<Job> al = new ArrayList<Job>();
+		//Create Job Objects and add it to the ArrayList<Job>
 		for(int i=0;i<start.length;i++)
 			al.add(new Job(start[i],finish[i]));
 		System.out.print(findMaxActivities(al));
