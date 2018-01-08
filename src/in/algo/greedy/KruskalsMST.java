@@ -6,8 +6,10 @@ import java.util.Collections;
 
 public class KruskalsMST {
 
+	//Contains ParrentARR for Union and Find
 	static int[] parentArr;
 	static int V;
+	//Contains Source, Destination and Weight.
 	static class Edge implements Comparable<Edge>
 	{
 		int src;
@@ -21,6 +23,7 @@ public class KruskalsMST {
 		}
 		@Override
 		public int compareTo(Edge o) {
+			//Sorting based on weight. Low weight edges comes before.
 			// TODO Auto-generated method stub
 			if(this.weight<o.weight)
 				return -1;
