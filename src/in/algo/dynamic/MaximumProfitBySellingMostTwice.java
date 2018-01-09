@@ -69,8 +69,8 @@ public class MaximumProfitBySellingMostTwice {
 	}
 
 	public static void main(String[] args) {
-		 int[] arr = { 2, 30, 15, 10, 8, 25, 80 };
-		// int[] arr = { 100, 30, 15, 10, 8, 25, 80 };
+		//int[] arr = { 2, 30, 15, 10, 8, 25, 80 };
+		int[] arr = { 100, 30, 15, 10, 8, 25, 80 };
 		//int[] arr = { 10, 22, 5, 75, 65, 80 };
 		//int[] arr = {90, 80, 70, 60, 50};
 		System.out.println(maxProfit(arr));
