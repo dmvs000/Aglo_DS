@@ -1,5 +1,8 @@
 package in.algo.dynamic;
 
+/*
+ * https://www.geeksforgeeks.org/find-length-of-the-longest-consecutive-path-in-a-character-matrix/
+ */
 public class LongestConsecutivePathInCharMatrix {
 
 	static int rows = 0;
@@ -10,6 +13,10 @@ public class LongestConsecutivePathInCharMatrix {
 	public static int LCP_Recur(char[][] arr, int i, int j)
 	{
 		dp = new int[rows][cols];
+		//Make all DP array to -1 initially
+		for(int x=0;x<rows;x++)
+			for(int y=0;y<cols;y++)
+				dp[x][y] = -1;
 		traversed = new boolean[rows][cols];
 		int curVal = 0;
 		curVal=Math.max(curVal, LCP_Recur_Aux(arr,i-1,j-1,arr[i][j]));
@@ -39,6 +46,8 @@ public class LongestConsecutivePathInCharMatrix {
 			return 0;
 		if(!validate(arr[i][j],prev))
 			return 0;
+		if(dp[i][j]!=-1)
+			return dp[i][j];
 		int curVal = 0;
 		curVal=Math.max(curVal, LCP_Recur_Aux(arr,i-1,j-1,arr[i][j]));
 		curVal=Math.max(curVal, LCP_Recur_Aux(arr,i-1,j,arr[i][j]));
