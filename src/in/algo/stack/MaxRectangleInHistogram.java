@@ -35,7 +35,7 @@ public class MaxRectangleInHistogram {
 				while(!height.isEmpty())
 				{
 					int t_h = height.pop();
-					int t_p = height.pop();
+					int t_p = pos.pop();
 					if((t_h*(i-t_p))>maxHeight)
 						maxHeight = (t_h)*(i-t_p);
 				}

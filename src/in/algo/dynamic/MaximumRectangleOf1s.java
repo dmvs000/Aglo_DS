@@ -9,11 +9,9 @@ public class MaximumRectangleOf1s {
 		int cols = arr[0].length;
 		int[] temp = new int[cols];
 		int maxSize = 0;
-		for(int i=0;i<rows;i++)
-		{
-			for(int j=0;j<cols;j++)
-			{
-				if(arr[i][j]==1)
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				if (arr[i][j] == 1)
 					temp[j] = temp[j] + 1;
 				else
 					temp[j] = 0;

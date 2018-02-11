@@ -44,6 +44,7 @@ public class KDistantNodes {
 		return -1;
 	}
 
+	//Given a Node and a distance k. Find all the child nodes that are k distance from the given node
 	public static void findKDistSubTree(Node root, int k) {
 		//Base.
 		if (root == null)

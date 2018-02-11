@@ -28,6 +28,7 @@ public class MaxMinProductWithRangeOfNumbers {
 		}
 		double maxProduct = 0;
 		double minProduct = 0;
+		//If no other elements other than zero. Then MaxProduct and MinProduct is zero
 		if (!containsOtherThanZero) {
 			System.out.println("MaxProduct" + maxProduct);
 			System.out.println("MinProduct" + minProduct);
@@ -55,6 +56,7 @@ public class MaxMinProductWithRangeOfNumbers {
 				tempProduct = tempProduct * Math.pow(i, hm.get(i));
 			}
 		}
+		//tempProduct will either be a positive or a negative number but not zero
 		if (tempProduct > 0) {
 			maxProduct = tempProduct;
 			if (firstNegNumber == 0) {

@@ -2,6 +2,10 @@ package in.algo.dynamic;
 
 import java.util.Arrays;
 
+/*
+ * https://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/
+ * https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+ */
 public class MaximumSum2DSubArray {
 
 	

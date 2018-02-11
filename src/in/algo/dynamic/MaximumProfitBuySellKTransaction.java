@@ -67,6 +67,7 @@ public class MaximumProfitBuySellKTransaction {
 	// Space Optimized Version
 	public static int findMaxProfit_SO(int[] prices, int k) {
 		int n = prices.length;
+		//This holds zero'th day value at first
 		int[][] prev_dp = new int[k + 1][2];
 		for (int i = 0; i <= k; i++) {
 			prev_dp[i][0] = 0;
@@ -83,11 +84,7 @@ public class MaximumProfitBuySellKTransaction {
 					cur_dp[j][1] = Math.max(prev_dp[j][1], prev_dp[j - 1][0] - prices[i - 1]);
 				}
 			}
-			// prev_dp = Arrays.copyOf(cur_dp, cur_dp.length);
-			for (int j = 0; j <= k; j++) {
-				prev_dp[j][0] = cur_dp[j][0];
-				prev_dp[j][1] = cur_dp[j][1];
-			}
+			prev_dp = cur_dp;
 		}
 		int retVal = Math.max(prev_dp[k][0], prev_dp[k][1]);
 		if (retVal == Integer.MIN_VALUE)
@@ -99,6 +96,7 @@ public class MaximumProfitBuySellKTransaction {
 		int[] arr = { 100, 30, 15, 10, 8, 25, 80 };
 		int k = 3;
 		System.out.println(findMaxProfit_SO(arr, k));
+		System.out.println(findMaxProfit(arr, k));
 	}
 
 }

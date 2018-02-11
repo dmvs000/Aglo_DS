@@ -1,25 +1,32 @@
 package in.algo.dynamic;
 
+/*
+ * https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
+ * T.C = O(s)
+ * S.C = O(s)
+ */
 public class ClimbingStairs {
 	
+	//s - total steps that are present
+	//m - steps that can be taken at a time
 	public static int countSteps(int s, int m)
 	{
+		//If no steps can be taken at all. No Solution
 		if(m==0)
 			return -1;
+		//If Steps are zero or one (or) only one step can be taken at a time, then solution is just one.
 		if(s==0||s==1||m==1)
 			return 1;
 		int[] dp = new int[s+1];	//Stores the number of steps for ith position
 		int[] sum = new int[s+1];	//Stores the total steps uptil ith position
-		int cur_m = 2;
 		dp[0] = dp[1] = 1;
 		sum[0] = 1;
 		sum[1] = 2;
 		for(int i=2;i<=s;i++)
 		{
-			if(cur_m<=m)
+			if(i<=m)
 			{
 				dp[i] = sum[i-1];
-				cur_m++;
 			}
 			else
 			{

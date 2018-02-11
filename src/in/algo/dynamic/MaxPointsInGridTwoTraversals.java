@@ -1,5 +1,8 @@
 package in.algo.dynamic;
 
+/*
+ * https://www.geeksforgeeks.org/collect-maximum-points-in-a-grid-using-two-traversals/
+ */
 public class MaxPointsInGridTwoTraversals {
 	
 	
