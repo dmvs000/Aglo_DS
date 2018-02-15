@@ -2,6 +2,9 @@ package in.algo.dynamic;
 
 import java.util.ArrayList;
 
+/*
+ * https://www.geeksforgeeks.org/total-number-of-non-decreasing-numbers-with-n-digits/
+ */
 public class NonDecreasingNumbersWithNDigits {
 	
 	public static int NDN_Recur(int N)
@@ -9,14 +12,14 @@ public class NonDecreasingNumbersWithNDigits {
 		int cur_count = 0;
 		for(int i=0;i<=9;i++)
 		{
-			cur_count += NDN_Recur_Aux(i,N-1);
+			cur_count += NDN_Recur_Aux(i,N);
 		}
 		return cur_count;
 	}
 	
 	public static int NDN_Recur_Aux(int prev, int N)
 	{
-		if(N==0)
+		if(N==1)
 			return 1;
 		int cur_count = 0;
 		for(int i=prev;i<=9;i++)

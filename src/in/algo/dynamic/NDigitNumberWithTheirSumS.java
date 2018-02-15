@@ -1,5 +1,8 @@
 package in.algo.dynamic;
 
+/*
+ * https://www.geeksforgeeks.org/count-sum-of-digits-in-numbers-from-1-to-n/
+ */
 public class NDigitNumberWithTheirSumS {
 	
 	public static int ND_Recur(int N, int S)
